@@ -23,8 +23,8 @@ jobs:
       
       - name: Prepare dvc and pull data
         run: |
-          dvc remote modify --local yandex-test-remote access_key_id ${{ secrets.YANDEX_STORAGE_ACCESS_KEY_ID }}
-          dvc remote modify --local yandex-test-remote secret_access_key ${{ secrets.YANDEX_STORAGE_ACCESS_KEY_SECRET }}
+          dvc remote modify --local yandex-object-storage-remote access_key_id ${{ secrets.YANDEX_STORAGE_ACCESS_KEY_ID }}
+          dvc remote modify --local yandex-object-storage-remote secret_access_key ${{ secrets.YANDEX_STORAGE_ACCESS_KEY_SECRET }}
           dvc pull --run-cache -q
         
       - name: Test model

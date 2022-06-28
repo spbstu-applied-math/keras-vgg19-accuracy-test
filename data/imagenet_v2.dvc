@@ -1,0 +1,5 @@
+outs:
+- md5: fa993b3dc45216eaf77991f092702f3f.dir
+  size: 1245920625
+  nfiles: 20
+  path: imagenet_v2

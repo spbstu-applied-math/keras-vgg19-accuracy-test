@@ -1,0 +1,14 @@
+stages:
+  stage-evaluate:
+    cmd: python src/evaluate.py
+    deps:
+    - data/imagenet_v2
+    - data/model.h5
+    - src/evaluate.py
+    - src/load_test_dataset.py
+    metrics:
+    - data/eval.json
+  stage-test-minimal-accuracy:
+    cmd: python tests/minimal_accuracy.py
+    deps:
+    - data/eval.json

@@ -1,0 +1,28 @@
+schema: '2.0'
+stages:
+  stage-evaluate:
+    cmd: python src/evaluate.py
+    deps:
+    - path: data/imagenet_v2
+      md5: fa993b3dc45216eaf77991f092702f3f.dir
+      size: 1245920625
+      nfiles: 20
+    - path: data/model.h5
+      md5: 605af8689911151540194198d437c925
+      size: 574762048
+    - path: src/evaluate.py
+      md5: 9693e6d28861f185bb480c5413966dba
+      size: 464
+    - path: src/load_test_dataset.py
+      md5: 36f4eb65a044dd7f47c336f904737efa
+      size: 1844
+    outs:
+    - path: data/eval.json
+      md5: eb7d635a22dd5296f40e9417151ba180
+      size: 70
+  stage-test-minimal-accuracy:
+    cmd: python tests/minimal_accuracy.py
+    deps:
+    - path: data/eval.json
+      md5: eb7d635a22dd5296f40e9417151ba180
+      size: 70

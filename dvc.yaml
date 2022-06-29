@@ -12,3 +12,4 @@ stages:
     cmd: python tests/minimal_accuracy.py
     deps:
     - data/eval.json
+    - tests/minimal_accuracy.py

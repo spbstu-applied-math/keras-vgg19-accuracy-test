@@ -26,3 +26,6 @@ stages:
     - path: data/eval.json
       md5: eb7d635a22dd5296f40e9417151ba180
       size: 70
+    - path: tests/minimal_accuracy.py
+      md5: 78000f7f990b539e0327485dd838c94f
+      size: 145

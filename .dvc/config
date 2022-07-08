@@ -1,5 +1,8 @@
 [core]
-    remote = yandex-object-storage-remote
+    remote = spbstu-applied-math-yandex
 ['remote "yandex-object-storage-remote"']
     url = s3://test-dvc-remote-bucket/temp-dvc-storage
+    endpointurl = https://storage.yandexcloud.net
+['remote "spbstu-applied-math-yandex"']
+    url = s3://202207dvc/projects/keras-vgg19-accuracy-test
     endpointurl = https://storage.yandexcloud.net

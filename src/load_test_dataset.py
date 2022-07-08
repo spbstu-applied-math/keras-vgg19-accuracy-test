@@ -9,7 +9,6 @@ def center_crop_resize(image, shape):
     target_height = shape[1]
     initial_width = tf.shape(image)[0]
     initial_height = tf.shape(image)[1]
-    im = image
 
     initial_ratio = initial_width / initial_height
     target_ratio = target_width / target_height
@@ -27,14 +26,14 @@ def center_crop_resize(image, shape):
         if w < target_width:
             w = target_width
     
-    im = tf.image.resize(im, (w, h), method="bicubic")
+    image = tf.image.resize(image, (w, h), method="bicubic")
     
-    width = tf.shape(im)[0]
-    height = tf.shape(im)[1]
+    width = tf.shape(image)[0]
+    height = tf.shape(image)[1]
     startx = (width//2 - target_width//2)
     starty = (height//2 - target_height//2)
-    im = tf.image.crop_to_bounding_box(im, startx, starty, target_width, target_height)
-    return im
+    image = tf.image.crop_to_bounding_box(image, startx, starty, target_width, target_height)
+    return image
 
 
 def vgg19_resize(image):
